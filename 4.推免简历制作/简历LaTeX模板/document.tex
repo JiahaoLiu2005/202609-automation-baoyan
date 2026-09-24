@@ -1,0 +1,163 @@
+\documentclass[UTF8]{ctexart}
+
+% 设置页面边距
+\usepackage[a4paper, left=0.5in, right=0.5in, top=0.2in, bottom=0.2in]{geometry}
+
+\usepackage{array} % 用于自定义列格式
+\usepackage{pifont}
+\usepackage{amssymb} % 用于访问各种符号
+\usepackage{graphicx}
+% 字体设置（XeLaTeX 下可直接调用系统字体）
+\usepackage{fontspec}
+\setCJKfamilyfont{song}{SimSun} % 可根据需要修改为其他中文字体
+
+% 设置艺术字体族（可替换为其他艺术字体，如“华文行楷”）
+\setCJKfamilyfont{art}{STXingkai}
+\newcommand{\art}[1]{{\CJKfamily{art}#1}}
+
+% 调色及自定义颜色
+\usepackage{xcolor}
+\definecolor{mygold}{RGB}{212,175,55}   % 淡金色
+\definecolor{bgcolor}{RGB}{250,250,240}   % 淡淡背景色
+
+% 设置章节标题样式：章节标题下方绘制淡金色分割线
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{}{0em}{}[\color{mygold}\vspace{-0.1em}\titlerule]
+
+% 设置列表格式
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=1.2em}
+
+% 超链接设置
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=blue]{hyperref}
+
+% 去掉页眉页脚
+\usepackage{fancyhdr}
+\pagestyle{empty}
+\usepackage[most]{tcolorbox}
+
+% 插入图片的宏包
+\usepackage{graphicx}
+\newcommand{\bigcircnum}[1]{\scalebox{1.15}{\ding{#1}}}
+\usepackage{comment}
+
+\begin{document}
+	
+	% 个人信息和两张图片放在同一水平线上
+	\begin{center}
+		\begin{minipage}[c]{0.15\textwidth}
+			\includegraphics[height=2.5cm]{1.jpg} % 插入学校logo，设置高度为3cm
+		\end{minipage}% 
+		\hfill
+		\begin{minipage}[c]{0.5\textwidth}
+			
+			\begin{center}
+				{\huge{奶龙}} \\
+				2004.01.10 | 浙江杭州\\
+				电话/微信：123456789 \\ 
+				邮箱：nailong@uuu.edu.cn\\
+			\end{center}
+			
+		\end{minipage}% 
+		\hfill
+		\begin{minipage}[c]{0.16\textwidth}
+			\includegraphics[height=3.5cm]{2.jpg} % 插入个人照片，设置高度为3cm
+		\end{minipage}
+	\end{center}
+
+	% 教育背景部分：标题使用艺术字体
+	\vspace{-1.3cm}
+	\section{\art{教育背景}}
+	
+	\vspace{-0.2em}
+
+	\begin{itemize}[leftmargin=0.9em, itemsep=0pt, parsep=0pt, labelsep=0.4em]
+		
+		\item 肯德基大学（985） \hspace{2em} 星期寺学院 \hspace{2em} 炸鸡工程专业（学科评级A+）
+		
+		\item 全部课程绩点：4.99/5 \hspace{2em} 绩点排名：1/101（前1.0\%）\hspace{2em} CET4：700 \hspace{2em} CET6：701
+		
+		\item 主修课程：炸鸡原理（100）；原味鸡导论（98）；汉堡制作基础（95）；脆皮鸡识别（95）；智能烘培技术（93）
+		
+		\item 荣誉奖项：\textbf{国家奖学金（3\%）}；疯狂星期四奖学金（专业唯二）；校一等奖学金；校优秀学生（2次）
+		  
+	\end{itemize}
+	
+	\vspace{-2.6em}
+	
+	
+	\section{\art{竞赛获奖}}
+	
+	\vspace{-0.5em}
+	
+	\begin{tabular}{m{10.7cm}m{1.6cm}m{4.2cm}} % 自定义列宽和左对齐
+		\hspace{-1cm}中国炸鸡大赛暨Crazy Thrusday炸鸡世界杯中国赛 - 原味吮指鸡 & \textbf{国家级} & \textbf{一等奖，季军} \\	
+		\hspace{-1cm}中国炸鸡大赛暨Crazy Thrusday炸鸡世界杯中国赛 - 热辣香骨鸡 & 国家级 & 专项赛二等，总决赛三等 \\	
+		\hspace{-1cm}中国智能炸鸡制作及竞技大赛 - 新奥尔良烤翅/大份薯条 & 国家级 & 烤翅二等，薯条三等 \\
+		\hspace{-1cm}Crazy Thursday 2026 - Burger Making（国际会议竞赛） & \textbf{国际级} & \textbf{Top 2/102，亚军} \\
+		\hspace{-1cm}Crazy Thursday 2026 - Cola Mixing Challenge（国际会议竞赛） & 国际级 & Top 11/459，单人 \\
+		\hspace{-1cm}KFC: Weekend Crazy Combo Challenge & 国际级 & Silver，Top 1.6\% \\
+		\hspace{-1cm}KFC: Store Revenue Quantification Challenge & 国际级 & Silver，Top 2.5\%, 单人 \\
+		\hspace{-1cm}KFC: Burger Delivery Trajectory Visualization & 国际级 & Bronze，Top 7.8\%，单人 \\
+		\hspace{-1cm}KFC: Fried Chicken Production Process Optimization Challenge & 国际级 & Bronze，Top 9.1\%，单人 \\
+	\end{tabular}
+	
+
+	\vspace{-1.6em}
+	
+	\section{\art{项目经历}}
+	\vspace{-0.2em}
+	
+	\begin{itemize}
+		\setlength{\itemsep}{0pt}
+		\setlength{\parskip}{0pt}
+		\item[\textbullet] \makebox[31.5em][l]{\textbf{一种融合油脂、鸡肉与香料的原味吮指鸡制作方法}} \makebox[2em][l]{\textbf{负责人}} \hfill \textbf{2025.04--2025.11}
+		
+		\vspace{-0.2em}
+		
+		\begin{description}[labelwidth=1.1em, labelsep=0em, leftmargin=!, align=parleft]
+			\setlength{\itemsep}{0pt}
+			\setlength{\parskip}{0pt}
+			\item[\ding{226}]为了XXXXXXXXXXXXXXXXXXXXXXX，XXXXXXXXXXXXXXXXXXXXXXXXXXXXX，F1得分达0.98
+			\item[\ding{226}]针对XXXXXXXXXXX问题，合作改进XXXXXXXXXXXXXXXXX。最终XXXXXXXXXXXX，效率提高30\%
+			\item[\ding{226}]通过XXXXXXXXXXXX，基于XXXXXXXXXXXX实现XXXXXXXXXXXXXXX
+			\item[\ding{226}]基于LaTeX撰写一万余字论文，作为\textbf{第一作者}获得\textbf{1项软件著作权，1篇论文录用（IF 17.8，SCI一区Top）}
+		\end{description}
+		
+		\vspace{-0.2em}
+		
+		\item[\textbullet] \makebox[31.5em][l]{\textbf{KFC Crazy Thursday 2026 - Burger Making}} 
+		\makebox[2em][l]{\textbf{队长}} \hfill \textbf{2026.04--2026.06}
+		
+		\vspace{-0.2em}
+		
+		\begin{description}[labelwidth=1.1em, labelsep=0em, leftmargin=!, align=parleft]
+			\setlength{\itemsep}{0pt}
+			\setlength{\parskip}{0pt}
+			\item[\ding{226}]针对XXXXX问题，XXXXXXXXXXXX。消融实验表明，XXXXXXXXXXXXXX
+			\item[\ding{226}]通过XXXXXXXXXXXXX，XXXXXXXXXXXXXX。通过XXXXXXXXXXX，耗时减少约30\%。XXXXXXXX，测试集准确率达\textbf{99.7\%}，\textbf{与冠军持平}
+			\item[\ding{226}]共同使用Markdown撰写一千余字英文竞赛报告，将解决方案与核心代码发布在KFC平台
+			
+		\end{description}
+		
+		\vspace{-0.2em}
+		
+		\item[\textbullet] \makebox[31.5em][l]{\textbf{中国炸鸡大赛 - 原味吮指鸡}} 
+		\makebox[2em][l]{\textbf{核心成员}} \hfill \textbf{2024.03--2024.11}
+		
+		\vspace{-0.2em}
+		
+		\begin{description}[labelwidth=1.1em, labelsep=0em, leftmargin=!, align=parleft]
+			\setlength{\itemsep}{0pt}
+			\setlength{\parskip}{0pt}
+			\item[\ding{226}]为XXXXXXX等干扰，放弃使用XXXXXXX。现场采集数据，XXXXXXXXXXXXXXXXXX
+			\item[\ding{226}]基于XXXXXXXXX，XXXXXXXXXXXX，最终耗时减少约 20\%，领先第四名近 30 秒，\textbf{满分}完成炸鸡、上菜等任务并获得\textbf{季军}
+
+		\end{description}
+	
+	\end{itemize}
+	
+	
+
+	
+\end{document}
